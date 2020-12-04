@@ -17,7 +17,7 @@ jobs:
          python -m pip install --upgrade pip
          pip install -r requirements.txt
     - name: Scrape
-      run: python scrape.py 
+      run: python scraper.py 
     - uses: mikeal/publish-to-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
