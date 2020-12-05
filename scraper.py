@@ -8,6 +8,7 @@ response = requests.get('https://www.instagram.com/marounbaydoun?hl=en')
 html = response.text
 
 print('Fetched HTML')
+print(html)
 
 follower_matches = re.search('\"edge_followed_by\":\{"count":(\d+)\}', html)
 following_matches = re.search('\"edge_follow\":\{"count":(\d+)\}', html)
