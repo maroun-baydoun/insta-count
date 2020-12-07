@@ -19,13 +19,12 @@ headers = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9", 
     "Accept-Encoding": "gzip, deflate", 
     "Accept-Language": "en-US;q=0.9,en;q=0.8", 
-    "Dnt": "1", 
-    "Host": "instagram.com",
+    "Dnt": "1",
     "Upgrade-Insecure-Requests": "1", 
     "User-Agent": random.choice(user_agents)
   }
 
-response = requests.get('http://www.instagram.com/marounbaydoun?hl=en', headers=headers)
+response = requests.get('https://www.instagram.com/marounbaydoun?hl=en', headers=headers)
 html = response.text
 
 print('Fetched HTML')
