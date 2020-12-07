@@ -24,14 +24,14 @@ headers = {
     "User-Agent": random.choice(user_agents)
   }
 
-response = requests.get('https://www.instagram.com/marounbaydoun?hl=en', headers=headers)
-html = response.text
+response = requests.get('https://www.instagram.com/marounbaydoun?__a=1', headers=headers)
+json = response.text
 
-print('Fetched HTML')
-print(html)
+print('Fetched JSON')
+print(json)
 
-follower_matches = re.search('\"edge_followed_by\":\{"count":(\d+)\}', html)
-following_matches = re.search('\"edge_follow\":\{"count":(\d+)\}', html)
+follower_matches = re.search('\"edge_followed_by\":\{"count":(\d+)\}', json)
+following_matches = re.search('\"edge_follow\":\{"count":(\d+)\}', json)
 
 follower_count = follower_matches.group(1) if follower_matches else None
 following_count = following_matches.group(1) if following_matches else None
